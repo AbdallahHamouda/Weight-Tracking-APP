@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <title>Weight traking app|Calorie calculator</title>
+        <script src="./javascript/caloriecalc.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body onload="">
+        <div id="header" >
+            <div>
+                <?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 600 600" style="enable-background:new 0 0 600 600;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<path class="st0" d="M477,434.5c-38.3,0-76.6,0-114.9,0c-61,0-122.1,0-183.1,0c-14,0-28,0-42,0c2,2,4,4,6,6
+			c0.2-75,36.5-155.1,107.8-187c31.8-14.2,68.3-15.6,101.1-4.4c33.6,11.5,61.8,35.7,81.6,64.8c25.2,37.2,37.3,81.9,37.5,126.6
+			c0,7.7,12,7.7,12,0c-0.2-79.2-39.2-164.7-114.9-197.9c-34.4-15.1-73.6-17.3-109.2-5.1c-35.8,12.3-65.7,37.3-87.2,68.1
+			c-27.4,39.2-40.5,87.3-40.6,134.9c0,3.2,2.8,6,6,6c38.3,0,76.6,0,114.9,0c61,0,122.1,0,183.1,0c14,0,28,0,42,0
+			C484.7,446.5,484.7,434.5,477,434.5z"/>
+	</g>
+</g>
+<g>
+	<path class="st0" d="M310.7,396.2c-10.5,0-20.2-5.7-25.3-14.9c-0.1-0.1-0.1-0.2-0.1-0.2c-0.1-0.2-0.2-0.5-0.4-0.7l-9.6-76.1
+		l60.1,48c0.1,0.2,0.2,0.4,0.4,0.6c0.1,0.1,0.1,0.2,0.2,0.3c7.8,13.9,2.7,31.6-11.2,39.3C320.5,394.9,315.6,396.2,310.7,396.2z"/>
+	<path d="M276,305.5l43.4,34.7l15.7,12.5c0.1,0.2,0.2,0.3,0.3,0.5l0,0l0,0c0,0.1,0.1,0.1,0.1,0.2c7.6,13.7,2.7,31-11,38.6
+		c-4.2,2.3-9,3.6-13.8,3.6c-10.3,0-19.8-5.6-24.9-14.6c0-0.1-0.1-0.1-0.1-0.2l0,0l0,0c-0.1-0.2-0.2-0.4-0.3-0.6l-2.5-19.5L276,305.5
+		 M274.7,303.1l7.3,57.8l2.5,19.6c0.1,0.3,0.3,0.5,0.4,0.7c0,0.1,0.1,0.2,0.1,0.3c5.4,9.7,15.4,15.1,25.7,15.1
+		c4.8,0,9.7-1.2,14.3-3.7c14.2-7.9,19.3-25.8,11.4-40c-0.1-0.1-0.1-0.2-0.2-0.3c-0.1-0.2-0.3-0.5-0.4-0.7L320,339.3L274.7,303.1
+		L274.7,303.1z"/>
+</g>
+</svg>
+
+            </div>
+            <a href="index.html">
+                <h1>Weight Tracking app</h1></a>
+      <a href="Calorie.html" id="cal">Calorie Calculator</a>
+    </div>
+    <div style="margin-top: 13%;" id="calpage">
+        <h3 id="res"></h3>
+        <label for="">Gender</label>
+        <select id="gender">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+        <label for="">Weight In Kg</label>
+    <input type="text" id="weight" placeholder="">
+    <label for="">Height In Cm</label>
+    <input type="text" id="height" placeholder="">
+    <label for="">Age</label>
+    <input type="text" id="age" placeholder="">
+    <label for="">Activity level</label>
+
+    <select id="active">
+        <option>BMR</option>
+        <option>Light Exercise 1-3</option>
+        <option>Moderate Exercise 4-5</option>
+        <option>Active 3-4 intense</option>
+        <option>Very active active 6-7 intense</option>
+    </select>
+    <button onclick="bmr()" id="subs">Submit</button>
+    </div>
+    </body>
+    <script >
+        document.querySelector('#age').addEventListener('keypress', function (e) {
+           if (e.key === 'Enter') {
+           return  bmr() }
+});
+    </script>
+    <style>
+    #calpage{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px rgb(116, 113, 113) solid;
+        width: 50%;
+        margin-left: 25%;
+        padding-bottom: 4%;
+    }
+    #subs{
+       margin-left: 0%;
+    }
+    input{
+        width: 20%;
+    }
+    #res{
+        background-color: rgb(187, 233, 187);
+        width: 100%;
+        text-align: center;
+        color: black;
+        font-weight: bolder;
+    }
+    label{
+        margin: 0%;
+    }
+    #gender{
+        height: 30px;
+    max-width: 15%;
+    min-width: 7%;
+    border-radius: 7px;
+    margin-right: 2px;
+    margin-top: 2%;
+    border: solid rgb(216, 216, 216) 2px;
+    font-weight: 500;
+    }
+    #active{
+        height: 30px;
+    max-width: 40%;
+    min-width: 7%;
+    border-radius: 7px;
+    margin-right: 2px;
+    margin-top: 2%;
+    border: solid rgb(216, 216, 216) 2px;
+    font-weight: 500;
+    }
+    </style>
+</html>

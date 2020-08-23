@@ -1,0 +1,136 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Tajawal', sans-serif;
+}
+#myapp{
+display: flex;
+flex-flow: row;
+justify-content: center;
+align-items: center;
+
+}
+input{
+    height: 30px;
+    max-width: 15%;
+    min-width: 7%;
+    border-radius: 7px;
+    margin-right: 2px;
+    margin-top: 2%;
+    border: solid rgb(216, 216, 216) 2px;
+    font-weight: 500;
+}
+button{
+    padding: 10px 8.5px 10px 8.5px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: cornflowerblue;
+    font-size: 17px;
+    font-weight: bolder;
+    color: white;
+margin-left: 45%;
+}
+button:hover{
+    box-shadow:2px 2px rgb(205, 206, 207);
+    cursor: pointer;
+    background-color: rgb(69, 131, 245);
+
+}
+#lala{
+    text-align: center;
+    margin-top: 10%;
+}
+#cal{
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    right: 2%;
+    top: 35%;
+}
+#cal:hover{
+color: rgb(240, 239, 239);
+text-decoration: underline;
+}
+#header{
+    background-color: cornflowerblue;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0;
+    right: 0;
+    height: 100px;
+}
+h1{
+    color: white;
+    position: absolute;
+    left: 5%;
+    cursor: pointer;
+}
+#Layer_1{
+    width: 50px;
+    height: 50px;
+   position: absolute;
+   top:15%;
+}
+#toup{
+    color: white;
+    background-color: rgb(60, 114, 214);
+    padding: 10px 3px 10px 10px;
+    border-radius: 50px; 
+    position: fixed;
+    bottom: 0%;;
+    right: 0%;
+    opacity: 0;
+    cursor: auto;
+}
+#layer_2{
+width: 40px;
+height: 40px;
+margin-left: 10px;
+}
+.show{
+    opacity: 1;
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px){
+    h1{
+        opacity: 0;
+    }
+    input{
+        margin-top: 10%;
+        max-width: 40%;
+    }
+    #lala{
+        margin-top:30% ;
+    }
+}
+@media only screen and (min-width: 600px){
+    #lala{
+        margin-top:20% ;
+        font-size: 25px;
+    }
+    input{
+        font-size: 20px;
+        margin-left:0.5%;
+
+    }
+    #btn{
+        font-size: 30px;
+        margin-top: 3%;
+    }
+    #cal{
+        font-size:25px;
+        top: 30%;
+    }
+}
+@media only screen and (min-width: 800px) {
+    /* For desktop: */
+    #btn{
+        font-size: 15px;
+        margin-top: 1%;
+    }
+    #cal{
+        font-size:15px;
+        top: 35%;
+    }
+  }
